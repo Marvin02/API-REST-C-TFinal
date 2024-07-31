@@ -56,10 +56,7 @@ namespace SampleProject.Infrastructure.Processing
                 .ForEach(entity => entity.Entity.ClearDomainEvents());
 
             var tasks = domainEvents
-                .Select(async (domainEvent) =>
-                {
-                    await _mediator.Publish(domainEvent);
-                });
+                .Select(async (domainEvent) => await _mediator.Publish(domainEvent));
 
             await Task.WhenAll(tasks);
 

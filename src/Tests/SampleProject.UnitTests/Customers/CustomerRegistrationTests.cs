@@ -33,11 +33,8 @@ namespace SampleProject.UnitTests.Customers
             customerUniquenessChecker.IsUnique(email).Returns(false);
 
             // Assert
-            AssertBrokenRule<CustomerEmailMustBeUniqueRule>(() =>
-            {
-                // Act
-                Customer.CreateRegistered(email, "Sample name", customerUniquenessChecker);
-            });
+            AssertBrokenRule<CustomerEmailMustBeUniqueRule>(() => // Act
+Customer.CreateRegistered(email, "Sample name", customerUniquenessChecker));
         }
     }
 }
