@@ -20,10 +20,7 @@ namespace SampleProject.UnitTests.SharedKernel
         [Test]
         public void MoneyValueOf_WhenCurrencyIsNotProvided_ThrowsMoneyValueMustHaveCurrencyRuleBroken()
         {
-            AssertBrokenRule<MoneyValueMustHaveCurrencyRule>(() =>
-            {
-                MoneyValue.Of(120, "");
-            });
+            AssertBrokenRule<MoneyValueMustHaveCurrencyRule>(() => MoneyValue.Of(120, ""));
         }
 
         [Test]

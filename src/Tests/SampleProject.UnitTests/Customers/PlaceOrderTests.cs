@@ -60,15 +60,8 @@ namespace SampleProject.UnitTests.Customers
             var conversionRates = GetConversionRates();
 
             // Assert
-            AssertBrokenRule<OrderMustHaveAtLeastOneProductRule>(() =>
-            {
-                // Act
-                customer.PlaceOrder(
-                    orderProductsData,
-                    allProductPrices,
-                    currency,
-                    conversionRates);
-            });
+            AssertBrokenRule<OrderMustHaveAtLeastOneProductRule>(() => // Act
+customer.PlaceOrder(orderProductsData, allProductPrices, currency, conversionRates));
         }
 
         [Test]
@@ -105,15 +98,8 @@ namespace SampleProject.UnitTests.Customers
             SystemClock.Set(new DateTime(2020, 1, 10, 12, 00, 0));
 
             // Assert
-            AssertBrokenRule<CustomerCannotOrderMoreThan2OrdersOnTheSameDayRule>(() =>
-            {
-                // Act
-                customer.PlaceOrder(
-                    orderProductsData,
-                    allProductPrices,
-                    currency,
-                    conversionRates);
-            });
+            AssertBrokenRule<CustomerCannotOrderMoreThan2OrdersOnTheSameDayRule>(() => // Act
+customer.PlaceOrder(orderProductsData, allProductPrices, currency, conversionRates));
         }
 
         private static List<ConversionRate> GetConversionRates()
