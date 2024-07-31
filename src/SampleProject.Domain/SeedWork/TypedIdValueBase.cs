@@ -2,7 +2,7 @@
 
 namespace SampleProject.Domain.SeedWork
 {
-    public abstract class TypedIdValueBase : IEquatable<TypedIdValueBase>
+    public abstract sealed class TypedIdValueBase : IEquatable<TypedIdValueBase>
     {
         public Guid Value { get; }
 
