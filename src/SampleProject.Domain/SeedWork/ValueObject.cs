@@ -5,7 +5,7 @@ using System.Reflection;
 
 namespace SampleProject.Domain.SeedWork
 {
-    public abstract class ValueObject : IEquatable<ValueObject>
+    public abstract sealed class ValueObject : IEquatable<ValueObject>
     {
         private List<PropertyInfo> _properties;
         private List<FieldInfo> _fields;
